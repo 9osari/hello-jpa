@@ -1,4 +1,4 @@
-package com;
+package com.domain;
 
 public enum OrderStatus {
     ORDER, CANCEL

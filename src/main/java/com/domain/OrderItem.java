@@ -1,4 +1,4 @@
-package com;
+package com.domain;
 
 import jakarta.persistence.*;
 
@@ -9,11 +9,14 @@ public class OrderItem {
     @Column(name="ORDER_ITEM_ID")
     private Long id;
 
-    @Column(name="ORDER_ID")
-    private Long orderId;
+    @ManyToOne
+    @JoinColumn(name="ORDER_ID")
+    private Order order;
 
-    @Column(name="ITEM_ID")
-    private Long itemId;
+    @ManyToOne
+    @JoinColumn(name="ITEM_ID")
+    private Item itemId;
+
     private int orderPrice;
     private int count;
 
@@ -25,19 +28,19 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
-    public Long getItemId() {
+    public Item getItemId() {
         return itemId;
     }
 
-    public void setItemId(Long itemId) {
+    public void setItemId(Item itemId) {
         this.itemId = itemId;
     }
 
