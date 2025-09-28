@@ -12,7 +12,7 @@ public class Member extends BaseEntity {
     private Long id;
     private String name;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="LOCKER_ID")
     private Locker locker;
 
