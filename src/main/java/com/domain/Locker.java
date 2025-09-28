@@ -3,7 +3,7 @@ package com.domain;
 import jakarta.persistence.*;
 
 @Entity
-public class Locker {
+public class Locker extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;
